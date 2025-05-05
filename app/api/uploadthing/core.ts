@@ -23,7 +23,7 @@ export const ourFileRouter = {
 
         console.log("file url", file.ufsUrl);
 
-        return {userId: metadata.userId, file };
+        return {userId: metadata.userId, fileUrl: file.ufsUrl, fileName: file.name, };
     }),
 } satisfies FileRouter;
 

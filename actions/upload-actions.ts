@@ -17,20 +17,10 @@ interface PdfSummaryType {
 }
 
 export async function generatePdfSummary(
-  uploadResponse: [
-    {
-      serverData: {
-        userId: string;
-        file: {
-          ufsUrl: string;
-          name: string;
-        };
-      };
-    }
-  ]
+  {fileUrl, fileName}: {fileUrl: string, fileName: string}
 ) {
-  console.log("uploadResponse", uploadResponse[0]);
-  if (!uploadResponse) {
+  
+  if (!fileUrl) {
     return {
       success: false,
       message: "File upload failed",
@@ -38,16 +28,11 @@ export async function generatePdfSummary(
     };
   }
 
-  const {
-    serverData: {
-      userId,
-      file: { ufsUrl: pdfUrl, name: fileName },
-    },
-  } = uploadResponse[0];
+  
 
-  console.log("pdfUrl", pdfUrl);
+  // console.log("pdfUrl", fileUrl);
 
-  if (!pdfUrl) {
+  if (!fileUrl) {
     return {
       success: false,
       message: "File upload failed",
@@ -56,7 +41,7 @@ export async function generatePdfSummary(
   }
 
   try {
-    const pdfText = await fetchAndExtractPdfText(pdfUrl);
+    const pdfText = await fetchAndExtractPdfText(fileUrl);
 
     console.log("pdfText", { pdfText });
 
