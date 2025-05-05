@@ -23,23 +23,32 @@ function Footer({}: Props) {
         <div className="flex flex-col gap-y-3">
           <div className="text-base font-semibold ">Social Links</div>
           <div className="flex flex-col gap-y-2.5">
-            <Link
-              href="#/Link"
-              className="text-gray-500 hover:underline hover:text-rose-500"
-            >
-              LinkedIn
+            <Link href="https://www.linkedin.com/in/nirajkumarwk/" passHref>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:underline hover:text-rose-500"
+              >
+                LinkedIn
+              </a>
             </Link>
-            <Link
-              href="#/Link"
-              className="text-gray-500 hover:underline hover:text-rose-500"
-            >
-              Github
+            <Link href="https://github.com/nirajkumarwk" passHref>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:underline hover:text-rose-500"
+              >
+                Github
+              </a>
             </Link>
-            <Link
-              href="#/Link"
-              className="text-gray-500 hover:underline hover:text-rose-500"
-            >
-              Design Portfolio
+            <Link href="https://www.behance.net/neerajkumar192" passHref>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:underline hover:text-rose-500"
+              >
+                Design Portfolio
+              </a>
             </Link>
           </div>
         </div>
