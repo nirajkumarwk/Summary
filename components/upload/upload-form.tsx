@@ -76,7 +76,7 @@ export default function UploadForm() {
 
       // upload the file to uploadthing
       const uploadResponse = await startUpload([file]);
-      console.log("resp", uploadResponse);
+      console.log("uploadResponse", uploadResponse);
       if (!uploadResponse) {
         toast.error("Something went wrong", {
           description: "Please use a different file",
