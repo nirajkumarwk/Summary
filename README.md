@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📄 PDF Summary Generator
 
-## Getting Started
+**Live Demo** 👉 [https://summary-tan.vercel.app/](https://summary-tan.vercel.app/)
 
-First, run the development server:
+A web application where users can upload PDF files and receive automated summaries. The summary is divided into digestible points and displayed using interactive UI cards with navigation controls and a progress indicator.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Authentication with **Clerk**
+- PDF Uploads handled by **UploadThing**
+- Text extraction from PDF using **LangChain**
+- AI-Powered Summarization using **Gemini API**
+- Database Integration with **NeonDB**
+- Interactive UI Summary Cards:
+  - View summary point-by-point
+  - Next/Previous buttons to navigate
+  - Progress bar to indicate completion
+- Built with **Next.js** and **Tailwind CSS**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧰 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js**: React framework for scalable UI
+- **Tailwind CSS**: Utility-first CSS styling
+- **UploadThing**: Simple file upload handling
+- **LangChain**: Extracts and preprocesses text from uploaded PDFs
+- **Gemini API**: Summarizes extracted content into clear bullet points
+- **NeonDB**: PostgreSQL database for persistent storage
+- **Clerk**: Authentication and user session management
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⚙️ How It Works
 
-## Deploy on Vercel
+1. User logs in using **Clerk**
+2. Uploads a PDF via **UploadThing**
+3. **LangChain** extracts raw text from the uploaded PDF
+4. The extracted text is summarized into bullet points via **Gemini API**
+5. The summary is stored in **NeonDB** and shown through interactive **UI cards**
+   - Browse summary points using **Next/Previous** buttons
+   - A **progress bar** shows how far the user has read
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧑‍💻 Local Setup
+
+1. Clone the repo  
+2. Install dependencies: `npm install`  
+3. Create `.env.local` and add credentials for:
+   - Clerk
+   - UploadThing
+   - NeonDB
+   - Gemini API Key  
+4. Run the development server: `npm run dev`  
+5. Visit: `http://localhost:3000`
+
+
